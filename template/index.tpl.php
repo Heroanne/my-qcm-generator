@@ -1,4 +1,13 @@
 <?php require '../template/partials/_top.tpl.php'; ?>
+
+<?php require '../Manager/AnswerManager.php'; ?>
+<?php require '../Manager/QcmManager.php'; ?>
+<?php require '../Manager/QuestionManager.php'; ?>
+
+
+
+
+
 <div class="container">
     <h1>Mes QCMs</h1>
 
@@ -26,4 +35,7 @@
     </table>
 
 </div>
+
+
+
 <?php require '../template/partials/_bottom.tpl.php'; ?>
