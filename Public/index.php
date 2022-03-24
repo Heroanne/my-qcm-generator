@@ -1,21 +1,8 @@
-
-<?php 
-
-function vd($parms) {
-    echo "<pre>";
-    print_r($parms);
-    echo "</pre>";
-    exit;
-}
-// vd($qcm);
+<?php
 
 require '../app/Manager/QcmManager.php';
 
+$qcmManager = new QcmManager();
+$qcms = $qcmManager->getAll();
 
-$qcmManager = new QcmManager;
-$qcm = $qcmManager -> getAll();
-
-
-require '../template/index.tpl.php'
-
-?>
+require '../template/index.tpl.php';
