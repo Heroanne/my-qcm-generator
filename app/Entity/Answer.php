@@ -14,6 +14,8 @@ class Answer
 
     // TODO : ajouter les propriétés
 
+
+
     // TODO : ajouter les méthodes
 
 

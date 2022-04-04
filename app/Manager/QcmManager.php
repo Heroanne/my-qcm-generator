@@ -1,44 +1,63 @@
 <?php
 
 require '../app/Entity/QCM.php';
+require_once '../app/Manager/Manager.php';
 
-class QcmManager
+class QcmManager extends Manager
 {
-    private $pdo;
-
-    public function __construct()
-    {
-        try
-        {
-            $this->pdo = new PDO('mysql:host=localhost;dbname=my_qcm_generator','root', 'root');
-        }
-        catch(PDOException $e)
-        {
-            echo 'Error : ' . $e->getMessage();
-            die;
-        }
-    }
 
     public function getAll()
     {
         $sql = 'SELECT * FROM qcm';
-        $req = $this->pdo->prepare($sql);
+        $req = $this->getPdo()->prepare($sql);
         $req->execute();
         $qcms = $req->fetchAll(PDO::FETCH_ASSOC);
         $result = [];
         foreach($qcms as $qcm)
         {
-            $obj = new QCM();
-            $obj->setId($qcm['id']);
-            $obj->setTitle($qcm['title']);
-            $result[] = $obj;
+            $result[] = (new Qcm())->hydrate($qcm);
         }
 
         return $result;
     }
 
+    public function get(int $id) : Qcm
+    {
+        $sql = "SELECT * FROM qcm WHERE id = :id";
+        $req = $this->getPdo()->prepare($sql);
+        $req->execute([
+            'id' => $id
+        ]);
+        $result = $req->fetch(PDO::FETCH_ASSOC);
+        
+        $question = (new Qcm())->hydrate($result);
 
+        return $question;
+    }
 
+    public function insert(string $title) : int
+    {
+        $sql = "INSERT INTO qcm (title) VALUES (:title)";
+        $req = $this->getPdo()->prepare($sql);
+        $req->execute([
+            'title' => $title
+        ]);
 
+        return $this->getPdo()->lastInsertId();
+    }
+
+    public function update(int $id, string $title)
+    {
+        $sql = "UPDATE qcm SET title = :title, WHERE id = :id";
+        $req = $this->getPdo()->prepare($sql);
+        return $req->execute(compact('id','title'));
+    }
+
+    public function delete(int $id)
+    {
+        $sql = "DELETE FROM qcm WHERE id = :id";
+        $req = $this->getPdo()->prepare($sql);
+        return $req->execute(compact('id'));
+    }
 
 }
