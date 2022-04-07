@@ -1,12 +1,12 @@
 <?php require '../template/partials/_top.tpl.php'; ?>
-<div class="container">
 
 
-    <h1>Mes QCMs</h1>
+<div class="position-relative">
+    <h1 class="position-relative top-0 start-50">Mes QCMs</h1>
 
     <br>
     <form action="/new-qcm.php">
-    <button type="submit">Nouveau QCM</button>
+    <button class="btn btn-outline-success" type="submit">📝 Nouveau QCM</button>
     <br>
 
     <table class="table">
@@ -27,7 +27,7 @@
                         <a href="/index-question.php?id=<?= $qcm->getId() ?>">Modifier</a>
                         <form action="/delete-qcm.php" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ?')">
                             <input type="hidden" name="id" value="<?= $qcm->getId() ?>" />
-                            <input type="submit" name="submit" value="Supprimer" />
+                            <input class="btn btn-outline-danger" type="submit" name="submit" value="Supprimer" />
                         </form>
                     </td>
                 </tr>

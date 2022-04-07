@@ -5,6 +5,8 @@
 
     <form action="" method="POST">
 
+        <a href="/index.php">⬅️ Retour</a>
+        
         <br></br>
 
         <p>Intitulé de la reponse</p>
@@ -17,20 +19,20 @@
         <br></br>
 
         <!-- Bouton ratio is_the_good -->
-        <div>
-            <input type="radio" id="True" name="is_the_good" value="1" required>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="True" name="is_the_good" value="1" required>
             <label for="True">C'est la bonne réponse</label>
         </div>
 
-        <div>
-            <input type="radio" id="False" name="is_the_good" value="0">
+        <div class="form-check">
+            <input class="form-check-input"type="radio" id="False" name="is_the_good" value="0">
             <label for="False">C'est la mauvaise réponse</label>
         </div>
 
         <br></br>
 
         <!-- Bouton Enregistrer -->
-        <input type="submit" name="submit" value="Enregistrer" />
+        <input class="btn btn-outline-success" type="submit" name="submit" value="Enregistrer" />
     </form>
 
 

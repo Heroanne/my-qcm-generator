@@ -16,12 +16,12 @@ if(isset($_POST['submit']))
         }
         else
         {
-            $message = "Une erreur s'est produite lors de l'enregistrement";
+            $message = " ❗️ Une erreur s'est produite lors de l'enregistrement ❗️ ";
         }
     }
     else
     {
-        $message = "Un text est obligatoire";
+        $message = "❗️ Un text est obligatoire ❗️";
     }
 }
 

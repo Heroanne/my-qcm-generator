@@ -4,7 +4,7 @@
     <form action="" method="POST">
         <p>Intitulé de la question</p>
         <input type="text" name="title" value="<?= htmlspecialchars($question->getTitle()) ?>" required/>
-        <input type="submit" name="submit" value="Enregistrer" />
+        <input class="btn btn-outline-success" type="submit" name="submit" value="Enregistrer" />
 
         <input type="hidden" value=" <?php $_GET['id']; ?> ">
 
@@ -18,11 +18,12 @@
 
         <br></br>
 
+        <!-- Accueil -->
+        <a href="/index.php">⬅️ Retour</a>
+
         <!-- ADD ANSWER -->
         <a href="/new-answer.php?id=<?= $qcm->getId() ?>">Add Answer</a>
-        
-        <!-- Accueil -->
-        <a href="/index.php">Retour</a>
+    
         
     </form>
 
