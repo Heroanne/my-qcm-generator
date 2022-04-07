@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
 
         if($qcmId)
         {
-            header('Location: /index-question.php'); die;
+            header('Location: /index-question.php?id='.$_POST['id_qcm']); die;
         }
         else
         {

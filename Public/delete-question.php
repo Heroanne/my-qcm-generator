@@ -7,7 +7,7 @@ if(isset($_POST['submit']) && isset($_POST['id']))
     $questionManager = new QuestionManager();
     $questionManager->delete($_POST['id']);
 
-    header('Location: /index-question.php'); die;
+    header('Location: /index-question.php?id='.$_POST['id']); die;
 
 }
 

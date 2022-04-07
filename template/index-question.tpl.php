@@ -2,6 +2,9 @@
 <div class="container">
     <h1>Mes questions</h1>
 
+    <!-- Accueil -->
+    <a href="/index.php">Retour</a>
+
     <a href="/new-question.php">Nouveau</a>
     <table border="1">
         <thead>
@@ -20,8 +23,12 @@
                     <a href="/edit-question.php?id=<?= $q->getId() ?>">Modifier</a>
                     <form action="/delete-question.php" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ?')">
                         <input type="hidden" name="id" value="<?= $q->getId() ?>" />
+                        
                         <input type="submit" name="submit" value="Supprimer" />
+
+                    
                     </form>
+
                 </td>
             </tr>
             <?php endforeach; ?>

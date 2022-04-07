@@ -2,6 +2,7 @@
 <div class="container">
     <form action="" method="POST">
         <label>Titre du QCM</label>
+        
         <input type="text" name="title" required/>
         <input type="submit" name="submit" value="Enregistrer" />
     </form>
@@ -11,5 +12,8 @@
     </div>
     <?php endif; ?>
 </div>
+
+    <!-- Accueil -->
+    <a href="/index.php">Retour</a>
 
 <?php require '../template/partials/_bottom.tpl.php'; ?>

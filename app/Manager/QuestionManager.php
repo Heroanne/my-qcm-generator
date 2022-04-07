@@ -62,7 +62,7 @@ class QuestionManager extends Manager
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
             'title' => $title,
-            'id_qcm' => $id_qcm
+            'id_qcm' => $id_qcm,
         ]);
 
         return $this->getPdo()->lastInsertId();
@@ -70,9 +70,9 @@ class QuestionManager extends Manager
 
     public function update(int $id, string $title, int $id_qcm)
     {
-        $sql = "UPDATE question WHERE id = :id SET title = :title";
+        $sql = "UPDATE question SET title = :title, id_qcm = :id_qcm WHERE id = :id";
         $req = $this->getPdo()->prepare($sql);
-        return $req->execute(compact('id','title'));
+        return $req->execute(compact('id','title','id_qcm'));
     }
 
     public function delete(int $id)

@@ -31,7 +31,8 @@ if(isset($_GET['id']))
                 throw new Exception(implode("<br />", $formErrors));
 
             $questionManager->update($_GET['id'], $_POST['title'], $_POST['id_qcm']);
-            header('Location: /index-question.php');
+
+            header('Location: /index-question.php?id='.$_POST['id_qcm']);
         }
         catch(Exception $e)
         {
