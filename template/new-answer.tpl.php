@@ -21,12 +21,12 @@
         <!-- Bouton ratio is_the_good -->
         <div class="form-check">
             <input class="form-check-input" type="radio" id="True" name="is_the_good" value="1" required>
-            <label for="True">C'est la bonne réponse</label>
+            <label for="True">✅ C'est la bonne réponse</label>
         </div>
 
         <div class="form-check">
             <input class="form-check-input"type="radio" id="False" name="is_the_good" value="0">
-            <label for="False">C'est la mauvaise réponse</label>
+            <label for="False">❌ C'est la mauvaise réponse</label>
         </div>
 
         <br></br>
