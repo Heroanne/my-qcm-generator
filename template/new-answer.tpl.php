@@ -36,11 +36,6 @@
     </form>
 
 
-
-
-    
-
-
     <?php if (!empty($message)) : ?>
         <div class="alert">
             <?= $message ?>

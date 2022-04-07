@@ -25,7 +25,7 @@ class AnswerManager extends Manager
 
     public function insert(string $text, int $id_question, bool $is_the_good) : int
     {
-        $sql = "INSERT INTO question (`text`, `id_question`, `is_a_good`) VALUES (:text, :id_question, :is_the_good)";
+        $sql = "INSERT INTO question (`text`, `id_question`, `is_a_good`) VALUES (:`text`, :id_question, :is_the_good)";
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
             'text' => $text,
